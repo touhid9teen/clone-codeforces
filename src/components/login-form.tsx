@@ -1,12 +1,11 @@
 "use client";
 import { Card, CardContent } from "./ui/card";
-import { Form, FormControl, FormField, FormItem, FormLabel } from "./ui/form";
+import { Form, FormControl, FormField, FormItem } from "./ui/form";
 
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { LoginSchema } from "@/validators/login";
 import { Checkbox } from "./ui/checkbox";
-import { Button } from "./ui/button";
 
 type LoginInput = {
   handleOrEmail: string;
@@ -32,7 +31,7 @@ export default function LoginForm() {
   };
 
   return (
-    <div>
+    <div className="">
       <Card className="border-[#767676] rounded-b">
         <div className="border-b-1 border-[#767676] pl-2 text-[#3b5998] font-medium ">
           Login into Codeforces
@@ -75,7 +74,7 @@ export default function LoginForm() {
                           <input
                             {...field}
                             type="password"
-                            className="border-1 border-[#767676] px-2 text-sm  outline-black w-[16em]"
+                            className="border-1 border-[#767676] px-2 text-sm  outline-black"
                           ></input>
                         </FormControl>
                       </FormItem>
