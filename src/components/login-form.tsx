@@ -33,77 +33,67 @@ export default function LoginForm() {
   return (
     <div className="">
       <Card className="border-[#767676] rounded-b">
-        <div className="border-b-1 border-[#767676] pl-2 text-[#3b5998] font-medium ">
+        <div className="border-b-1 border-[#767676] pl-2 pt-1 text-[#3b5998] font-medium ">
           Login into Codeforces
         </div>
 
         <CardContent className="flex flex-col ">
           <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)}>
-              <div>
-                <div className="pt-6">
-                  <FormField
-                    control={form.control}
-                    name="handleOrEmail"
-                    render={({ field }) => (
-                      <FormItem className="grid grid-cols-2 gap-4 ">
-                        <label className="flex items-center justify-center text-sm">
-                          Handle/Email
-                        </label>
-                        <FormControl>
-                          <input
-                            {...field}
-                            type="text"
-                            className="border-1 border-[#767676]  outline-black px-2 text-sm"
-                          ></input>
+              <div className="flex flex-col gap-6">
+                <FormField
+                  control={form.control}
+                  name="handleOrEmail"
+                  render={({ field }) => (
+                    <FormItem className="grid grid-cols-2 gap-6 pt-6">
+                      <label className="text-right text-sm">Handle/Email</label>
+                      <FormControl>
+                        <input
+                          {...field}
+                          type="text"
+                          className="border-1 border-[#767676]  outline-black px-2 text-sm"
+                        ></input>
+                      </FormControl>
+                    </FormItem>
+                  )}
+                />
+                <FormField
+                  control={form.control}
+                  name="password"
+                  render={({ field }) => (
+                    <FormItem className="grid grid-cols-2 gap-6">
+                      <label className="text-right text-sm">Password</label>
+                      <FormControl>
+                        <input
+                          {...field}
+                          type="password"
+                          className="border-1 border-[#767676] px-2 text-sm  outline-black"
+                        ></input>
+                      </FormControl>
+                    </FormItem>
+                  )}
+                />
+                <FormField
+                  control={form.control}
+                  name="remember"
+                  render={({ field }) => (
+                    <FormItem className="grid grid-cols-2 gap-4">
+                      <div className="flex gap-2 col-start-2">
+                        <FormControl className="">
+                          <Checkbox
+                            checked={field.value}
+                            onCheckedChange={field.onChange}
+                            className="border-[#767676]"
+                          />
                         </FormControl>
-                      </FormItem>
-                    )}
-                  />
-                </div>
-                <div className="pt-6">
-                  <FormField
-                    control={form.control}
-                    name="password"
-                    render={({ field }) => (
-                      <FormItem className="grid grid-cols-2 gap-4">
-                        <label className="flex items-center justify-center text-sm">
-                          Password
+                        <label className="text-xs">
+                          Remember me for a month
                         </label>
-                        <FormControl>
-                          <input
-                            {...field}
-                            type="password"
-                            className="border-1 border-[#767676] px-2 text-sm  outline-black"
-                          ></input>
-                        </FormControl>
-                      </FormItem>
-                    )}
-                  />
-                </div>
-                <div className="pt-6">
-                  <FormField
-                    control={form.control}
-                    name="remember"
-                    render={({ field }) => (
-                      <FormItem className="grid grid-cols-2 gap-4">
-                        <div className="flex gap-2 col-start-2">
-                          <FormControl className="">
-                            <Checkbox
-                              checked={field.value}
-                              onCheckedChange={field.onChange}
-                              className="border-[#767676]"
-                            />
-                          </FormControl>
-                          <label className="text-xs">
-                            Remember me for a month
-                          </label>
-                        </div>
-                      </FormItem>
-                    )}
-                  />
-                </div>
-                <div className="grid grid-cols-3 pt-6">
+                      </div>
+                    </FormItem>
+                  )}
+                />
+                <div className="grid grid-cols-3">
                   <button
                     type="submit"
                     className="col-start-2 border-1 px-3 py-1 text-sm  hover:bg-gray-100"

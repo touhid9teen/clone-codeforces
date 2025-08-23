@@ -6,7 +6,8 @@ export default function SinglePageWrapper({
   children: React.ReactNode;
 }) {
   return (
-    <div className="container flex items-center justify-center size-full min-h-[calc(100vh-8rem-6rem-10px)] border-2">
+    <div className="max-w-7xl mx-auto px-4 py-4">
+      {/* min-h-[calc(100vh-8rem-6rem-10px)]  */}
       {children}
     </div>
   );
