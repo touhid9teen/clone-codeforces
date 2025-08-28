@@ -1,5 +1,7 @@
 "use client";
 
+import { FormFieldType } from "@/types/form";
+import { ColumnDef } from "@tanstack/react-table";
 import { useState } from "react";
 
 // Mock data matching the original design
@@ -110,6 +112,58 @@ const pastContests = [
     length: "02:00",
     participants: "x33896",
     standings: "Final standings",
+  },
+];
+
+const fields: FormFieldType[] = [
+  {
+    name: "contest_name",
+    type: "text",
+    label: "Name",
+  },
+  {
+    name: "contest_writers",
+    type: "text",
+    label: "Writers",
+  },
+  {
+    name: "contest_start_time",
+    type: "text",
+    label: "Start Time",
+  },
+  {
+    name: "contest_length",
+    type: "text",
+    label: "Length",
+  },
+  {
+    name: "contest_length",
+    type: "text",
+    label: "Length",
+  },
+];
+
+const customColumns: ColumnDef<any>[] = [
+  {
+    accessorKey: "contest_name",
+    header: "Name",
+  },
+  {
+    accessorKey: "contest_writers",
+    header: "Name",
+  },
+  {
+    accessorKey: "contest_start_time",
+    header: "Name",
+  },
+  {
+    accessorKey: "contest_length",
+    header: "Name",
+  },
+  {
+    accessorKey: "status",
+    header: "",
+    cell: ({ row }: { row: { original: any } }) => <p></p>,
   },
 ];
 
